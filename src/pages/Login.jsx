@@ -1,4 +1,7 @@
+// Al enviar un formulario lo que hace guarda el usuario en AuthContext y se redirige según rol
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "./Login.css";
 
 /* ===== Datos editables ===== */
@@ -48,13 +51,12 @@ function EyeIcon({ off }) {
   );
 }
 
-/* ===== Ilustración: personas saliendo del teléfono ===== */
+/* ===== Ilustración ===== */
 function Ilustracion() {
   const piel = "#f2c4a8";
   const piel2 = "#e2a77e";
   return (
     <svg className="ilustracion" viewBox="0 0 560 430" aria-hidden="true">
-      {/* Fondo */}
       <path
         className="il-blob"
         d="M118 330 C78 220 170 118 292 108 C412 98 506 190 476 300 C456 372 334 402 232 396 C170 392 134 370 118 330 Z"
@@ -67,7 +69,6 @@ function Ilustracion() {
       <path className="il-stem" d="M64 352 L64 262 M64 300 L38 276 M64 312 L92 288" />
       <ellipse className="il-blob2" cx="330" cy="368" rx="210" ry="9" />
 
-      {/* Burbujas flotantes */}
       <g className="il-blob3">
         <rect x="196" y="88" width="46" height="38" rx="6" />
         <path d="M212 126 L206 142 L228 126 Z" />
@@ -86,7 +87,6 @@ function Ilustracion() {
       />
       <path d="M434 62 l9 9 l15-17" fill="none" stroke="#fff" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
 
-      {/* Teléfono */}
       <g transform="rotate(-5 150 250)">
         <rect className="il-dark" x="78" y="88" width="154" height="304" rx="20" />
         <rect className="il-screen" x="90" y="102" width="130" height="276" rx="12" />
@@ -95,7 +95,6 @@ function Ilustracion() {
         <rect className="il-blob" x="100" y="146" width="80" height="14" rx="4" />
       </g>
 
-      {/* Persona 1 */}
       <g>
         <line x1="176" y1="300" x2="160" y2="352" stroke={piel} strokeWidth="8" strokeLinecap="round" />
         <line x1="200" y1="300" x2="214" y2="348" stroke={piel} strokeWidth="8" strokeLinecap="round" />
@@ -109,7 +108,6 @@ function Ilustracion() {
         <circle cx="188" cy="172" r="11" fill={piel} />
       </g>
 
-      {/* Persona 2 */}
       <g>
         <line className="il-dark-s" x1="310" y1="244" x2="290" y2="340" strokeWidth="20" strokeLinecap="round" />
         <line className="il-dark-s" x1="338" y1="244" x2="364" y2="335" strokeWidth="20" strokeLinecap="round" />
@@ -125,7 +123,6 @@ function Ilustracion() {
         <circle cx="322" cy="153" r="11" fill={piel2} />
       </g>
 
-      {/* Persona 3 */}
       <g>
         <path fill="#f6f0e0" d="M420 194 L454 194 L472 318 L402 318 Z" />
         <path stroke="#e8c872" strokeWidth="2" d="M428 196 L418 316 M438 196 L435 316 M448 196 L453 316" />
@@ -156,14 +153,29 @@ function Login() {
 
   const rol = ROLES.find((r) => r.id === tipo);
 
+  // Hooks para navegar y acceder al contexto
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
   const iniciarSesion = async (e) => {
     e.preventDefault();
     setError("");
     setCargando(true);
+
     try {
-      // TODO: reemplaza esto por tu llamada real al backend.
-      console.log("Login:", { email, password, tipo, recordarme });
+      // Simulación (después va el fetch al backend)
       await new Promise((r) => setTimeout(r, 800));
+
+      // 1. Guarda el usuario en el AuthContext
+      login({
+        email: email,
+        rol: tipo,
+      });
+
+      // 2. Navega según el rol
+      if (tipo === "estudiante") navigate("/estudiante");
+      else if (tipo === "docente") navigate("/docente");
+      else if (tipo === "admin") navigate("/direccion");
     } catch {
       setError("Correo o contraseña incorrectos. Revisa que uses tu cuenta @uto.edu.mx.");
     } finally {
@@ -174,7 +186,6 @@ function Login() {
   return (
     <main className="login-page">
       <div className="login-card">
-        {/* ===== Izquierda: formulario ===== */}
         <section className="login-form-panel">
           <div className="form-container">
             <div className="brand-logo">
@@ -294,7 +305,6 @@ function Login() {
           </div>
         </section>
 
-        {/* ===== Derecha: aviso + ilustración ===== */}
         <aside className="login-aside">
           <div className="aviso-periodo">
             <h2>Evaluación docente abierta</h2>
