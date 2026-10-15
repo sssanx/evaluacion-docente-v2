@@ -1,23 +1,24 @@
 /* =========================================================
    MIS EVALUACIONES
+   Paleta UT de Oriental: vino, dorado, verde institucional
    ========================================================= */
 .me-page {
-  --purple: #8b5cf6;
-  --purple-dark: #7c3aed;
-  --purple-soft: #ede9fe;
-  --green: #10b981;
-  --green-soft: #d1fae5;
-  --gold: #f59e0b;
-  --gold-soft: #fef3c7;
-  --red: #ef4444;
-  --red-soft: #fee2e2;
-  --bg: #f5f5f7;
+  --marca: #6f1738;
+  --marca-dark: #55102b;
+  --marca-soft: #f5eaef;
+  --green: #386641;
+  --green-soft: #dce8d5;
+  --gold: #b8862b;
+  --gold-soft: #f7ecd0;
+  --red: #b42318;
+  --red-soft: #fdeceb;
+  --bg: #f7f6f2;
   --surface: #ffffff;
-  --line: #e5e7eb;
-  --line-soft: #f3f4f6;
-  --ink: #1a1a1a;
-  --muted: #6b7280;
-  --mute: #9ca3af;
+  --line: #e7e4dc;
+  --line-soft: #f1efe9;
+  --ink: #202124;
+  --muted: #5f6368;
+  --mute: #8d9196;
   display: block;
   width: 100%;
   min-height: 100%;
@@ -78,8 +79,9 @@
 }
 
 .me-back:hover {
-  border-color: var(--purple);
-  color: var(--purple);
+  border-color: var(--marca);
+  background: var(--marca-soft);
+  color: var(--marca);
 }
 
 .me-back-icon {
@@ -129,8 +131,8 @@
 }
 
 .me-summary-icon-purple {
-  background: var(--purple-soft);
-  color: var(--purple-dark);
+  background: var(--marca-soft);
+  color: var(--marca);
 }
 
 .me-summary-icon-gold {
@@ -182,8 +184,8 @@
 }
 
 .me-card:hover {
-  border-color: var(--purple);
-  box-shadow: 0 8px 20px -14px rgba(139, 92, 246, 0.3);
+  border-color: var(--marca);
+  box-shadow: 0 8px 20px -14px rgba(111, 23, 56, 0.35);
 }
 
 .me-card-avatar {
@@ -192,8 +194,8 @@
   display: grid;
   place-items: center;
   border-radius: 14px;
-  background: var(--purple-soft);
-  color: var(--purple-dark);
+  background: var(--marca-soft);
+  color: var(--marca);
   font-size: 15px;
   font-weight: 800;
   flex-shrink: 0;
@@ -258,22 +260,22 @@
 
 .me-card-score.excelente {
   background: var(--green-soft);
-  color: #059669;
+  color: var(--green);
 }
 
 .me-card-score.bueno {
-  background: #d1fae5;
-  color: #047857;
+  background: #eaf1e5;
+  color: #2f5a37;
 }
 
 .me-card-score.regular {
   background: var(--gold-soft);
-  color: #b45309;
+  color: #7a5710;
 }
 
 .me-card-score.bajo {
   background: var(--red-soft);
-  color: #b91c1c;
+  color: var(--red);
 }
 
 .me-card-badge {
@@ -286,7 +288,7 @@
   padding: 4px 10px;
   border-radius: 999px;
   background: var(--green-soft);
-  color: #059669;
+  color: var(--green);
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.3px;
@@ -315,8 +317,8 @@
   height: 60px;
   padding: 16px;
   border-radius: 50%;
-  background: var(--purple-soft);
-  color: var(--purple-dark);
+  background: var(--marca-soft);
+  color: var(--marca);
 }
 
 .me-empty h2 {

@@ -2,24 +2,26 @@
 
 /* =========================================================
    EVALUAR DOCENTE — Estilo Complex Form Editor
+   Paleta UT de Oriental: vino, dorado, verde institucional
    ========================================================= */
 
 .ef-page {
-  --purple: #8b5cf6;
-  --purple-dark: #7c3aed;
-  --purple-soft: #ede9fe;
-  --green: #10b981;
-  --green-soft: #d1fae5;
-  --red: #ef4444;
-  --red-soft: #fee2e2;
+  --marca: #6f1738;
+  --marca-dark: #55102b;
+  --marca-soft: #f5eaef;
+  --dorado: #b8862b;
+  --green: #386641;
+  --green-soft: #dce8d5;
+  --red: #b42318;
+  --red-soft: #fdeceb;
 
-  --bg: #f9fafb;
+  --bg: #f7f6f2;
   --surface: #ffffff;
-  --line: #e5e7eb;
-  --line-soft: #f3f4f6;
-  --ink: #111827;
-  --muted: #6b7280;
-  --mute: #9ca3af;
+  --line: #e7e4dc;
+  --line-soft: #f1efe9;
+  --ink: #202124;
+  --muted: #5f6368;
+  --mute: #8d9196;
 
   min-height: 100vh;
   background: var(--bg);
@@ -89,8 +91,9 @@
 }
 
 .ef-back:hover {
-  border-color: var(--purple);
-  color: var(--purple);
+  border-color: var(--marca);
+  background: var(--marca-soft);
+  color: var(--marca);
 }
 
 .ef-back-icon {
@@ -168,7 +171,7 @@
   display: block;
   height: 100%;
   border-radius: 999px;
-  background: var(--purple);
+  background: var(--marca);
   transition: width 0.4s ease;
 }
 
@@ -207,7 +210,7 @@
 }
 
 .ef-info strong {
-  color: var(--purple-dark);
+  color: var(--marca);
   font-weight: 700;
 }
 
@@ -218,7 +221,7 @@
   align-items: flex-start;
   gap: 12px;
   padding: 16px 20px;
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(180, 35, 24, 0.2);
   border-left: 4px solid var(--red);
   border-radius: 10px;
   background: var(--red-soft);
@@ -253,6 +256,7 @@
   gap: 16px;
   padding: 20px 24px;
   border: 1px solid var(--line);
+  border-left: 4px solid var(--dorado);
   border-radius: 14px;
   background: var(--surface);
 }
@@ -263,8 +267,8 @@
   display: grid;
   place-items: center;
   border-radius: 12px;
-  background: var(--purple-soft);
-  color: var(--purple-dark);
+  background: var(--marca-soft);
+  color: var(--marca);
   font-size: 15px;
   font-weight: 800;
   flex-shrink: 0;
@@ -280,7 +284,7 @@
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.5px;
-  color: var(--muted);
+  color: var(--dorado);
 }
 
 .ef-target-info strong {
@@ -315,8 +319,8 @@
   display: grid;
   place-items: center;
   border-radius: 11px;
-  background: var(--purple-soft);
-  color: var(--purple-dark);
+  background: var(--marca-soft);
+  color: var(--marca);
   font-size: 14px;
   font-weight: 800;
   flex-shrink: 0;
@@ -358,7 +362,7 @@
 }
 
 .ef-pregunta:hover {
-  border-color: #d1d5db;
+  border-color: #d3cfc4;
 }
 
 .ef-pregunta.error {
@@ -379,7 +383,7 @@
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.5px;
-  color: var(--purple-dark);
+  color: var(--marca);
 }
 
 .ef-pregunta-type {
@@ -423,16 +427,17 @@
 }
 
 .ef-opcion:hover {
-  border-color: var(--purple);
-  color: var(--purple);
+  border-color: var(--marca);
+  background: var(--marca-soft);
+  color: var(--marca);
   transform: translateY(-2px);
 }
 
 .ef-opcion.activo {
   border-color: transparent;
-  background: var(--purple);
+  background: var(--marca);
   color: white;
-  box-shadow: 0 8px 16px -8px rgba(139, 92, 246, 0.55);
+  box-shadow: 0 8px 16px -8px rgba(111, 23, 56, 0.55);
   transform: translateY(-2px);
 }
 
@@ -452,7 +457,7 @@
 }
 
 .ef-opcion:focus-visible {
-  outline: 2px solid var(--purple);
+  outline: 2px solid var(--marca);
   outline-offset: 2px;
 }
 
@@ -474,12 +479,12 @@
 }
 
 .ef-textarea:hover {
-  border-color: #d1d5db;
+  border-color: #d3cfc4;
 }
 
 .ef-textarea:focus {
-  border-color: var(--purple);
-  box-shadow: 0 0 0 3px var(--purple-soft);
+  border-color: var(--marca);
+  box-shadow: 0 0 0 3px var(--marca-soft);
 }
 
 .ef-textarea::placeholder {
@@ -501,15 +506,15 @@
   align-items: flex-start;
   gap: 12px;
   padding: 16px 20px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--green-soft);
   border-radius: 12px;
-  background: var(--surface);
+  background: var(--green-soft);
 }
 
 .ef-anon-icon {
   width: 20px;
   height: 20px;
-  color: var(--purple);
+  color: var(--green);
   flex-shrink: 0;
 }
 
@@ -517,7 +522,7 @@
   margin: 0;
   font-size: 12.5px;
   font-weight: 500;
-  color: var(--muted);
+  color: #3d4a3f;
   line-height: 1.5;
 }
 
@@ -563,15 +568,15 @@
 }
 
 .ef-btn-primary {
-  background: var(--purple);
+  background: var(--marca);
   color: white;
-  box-shadow: 0 6px 16px -6px rgba(139, 92, 246, 0.5);
+  box-shadow: 0 6px 16px -6px rgba(111, 23, 56, 0.5);
 }
 
 .ef-btn-primary:hover:not(:disabled) {
-  background: var(--purple-dark);
+  background: var(--marca-dark);
   transform: translateY(-1px);
-  box-shadow: 0 10px 20px -6px rgba(139, 92, 246, 0.6);
+  box-shadow: 0 10px 20px -6px rgba(111, 23, 56, 0.6);
 }
 
 .ef-btn-icon {

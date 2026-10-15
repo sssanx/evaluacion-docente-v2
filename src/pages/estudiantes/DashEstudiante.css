@@ -4,42 +4,44 @@
    DASHBOARD ESTUDIANTE V3
    COLORES: todo el color vive en el primer bloque (.v3-page).
    Para cambiar la paleta edita solo esas variables.
-   - Marca (verde): navegación y acciones
+   - Marca (vino): navegación y acciones
    - Acento (dorado): "en curso" / siguiente paso
-   - Verde claro: "Evaluado" (siempre con ícono y texto)
+   - Verde institucional: "Evaluado" (siempre con ícono y texto)
    ========================================================= */
 
 .v3-page {
-  /* Marca */
-  --marca-900: #12372b;
-  --marca-800: #1b4a3a;
-  --marca-700: #24604b;
-  --acento: #c9a45c;
+  /* Marca (vino #6F1738) */
+  --marca-900: #45091f;
+  --marca-800: #6f1738;
+  --marca-700: #8a2a4c;
+  --acento: #b8862b;
+  --acento-claro: #dcb765; /* dorado sobre fondos oscuros */
   --sobre-marca: #ffffff;
   --sobre-marca-suave: rgba(255, 255, 255, 0.85);
   --sombra: color-mix(in srgb, var(--marca-900) 70%, transparent);
 
   /* Superficies y texto */
-  --bg: #f8f6f1;
+  --bg: #f7f6f2;
   --card: #ffffff;
-  --texto: #1c2420;
-  --suave: #5b6862;
-  --linea: #e6e3da;
-  --linea-suave: #f0eee7;
-  --linea-fuerte: #cfcbc0;
-  --pista: #e8e5dc;
-  --hover: #fbfaf7;
-  --verde-claro: #e6efea;
+  --texto: #202124;
+  --suave: #5f6368;
+  --linea: #e7e4dc;
+  --linea-suave: #f0eee8;
+  --linea-fuerte: #d0ccc1;
+  --pista: #ebe8e0;
+  --hover: #faf9f6;
+  --seleccion: #f5eaef; /* vino claro: elementos seleccionados */
+  --verde-claro: #dce8d5; /* verde salvia */
 
   /* Estados */
-  --ok-bg: #e2f3ea;
-  --ok-txt: #176b46;
-  --curso-bg: #fff1cf;
-  --curso-txt: #7a4f00;
-  --curso-fila: #fbf6e8;
-  --curso-pista: #efe3c2;
+  --ok-bg: #dce8d5;
+  --ok-txt: #386641;
+  --curso-bg: #f7ecd0;
+  --curso-txt: #7a5710;
+  --curso-fila: #fbf5e6;
+  --curso-pista: #ecdfb9;
   --neutro-bg: #eeece6;
-  --neutro-txt: #4f5a55;
+  --neutro-txt: #4f5459;
 
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -129,7 +131,7 @@ body,
   transition: background 0.15s, color 0.15s;
 }
 
-.v3-nav-item:hover { background: var(--bg); color: var(--texto); }
+.v3-nav-item:hover { background: var(--seleccion); color: var(--marca-800); }
 .v3-nav-item.active { background: var(--marca-800); color: var(--sobre-marca); }
 .v3-nav-icon { width: 18px; height: 18px; flex-shrink: 0; }
 
@@ -158,6 +160,7 @@ body,
   color: var(--sobre-marca);
   font-size: 13px;
   font-weight: 700;
+  box-shadow: 0 0 0 2px var(--card), 0 0 0 3.5px var(--acento);
 }
 
 .v3-logout-mobile {
@@ -196,8 +199,8 @@ body,
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 0 44px rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(220, 183, 101, 0.22);
+  box-shadow: 0 0 0 44px rgba(255, 255, 255, 0.03);
   pointer-events: none;
 }
 
@@ -207,7 +210,7 @@ body,
   display: inline-block;
   margin-bottom: 16px;
   padding: 5px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(220, 183, 101, 0.5);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
   font-size: 13px;
@@ -225,7 +228,7 @@ body,
   margin-bottom: 16px;
   padding: 13px;
   border-radius: 50%;
-  background: var(--acento);
+  background: var(--acento-claro);
   color: var(--marca-900);
 }
 
@@ -240,13 +243,13 @@ body,
   padding: 0 24px;
   border-radius: 12px;
   background: var(--sobre-marca);
-  color: var(--marca-900);
+  color: var(--marca-800);
   font-size: 15px;
   font-weight: 700;
   transition: background 0.2s, transform 0.1s;
 }
 
-.v3-cta:hover { background: var(--verde-claro); }
+.v3-cta:hover { background: var(--seleccion); }
 .v3-cta:active { transform: translateY(1px); }
 .v3-cta-icon { width: 16px; height: 16px; transition: transform 0.25s; }
 .v3-cta:hover .v3-cta-icon { transform: translateX(4px); }
@@ -258,12 +261,12 @@ body,
   width: 100%;
   margin-top: 28px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.v3-anon-icon { width: 16px; height: 16px; color: var(--acento); flex-shrink: 0; }
+.v3-anon-icon { width: 16px; height: 16px; color: var(--acento-claro); flex-shrink: 0; }
 
 /* Tarjetas de resumen */
 
@@ -288,9 +291,9 @@ body,
 .v3-stat-foot { font-size: 13.5px; font-weight: 500; }
 
 .v3-bar { flex: 1; height: 8px; border-radius: 999px; background: var(--pista); overflow: hidden; }
-.v3-bar i { display: block; height: 100%; border-radius: inherit; background: var(--marca-700); transition: width 0.8s ease; }
+.v3-bar i { display: block; height: 100%; border-radius: inherit; background: var(--marca-800); transition: width 0.8s ease; }
 .v3-bar-light { background: rgba(255, 255, 255, 0.22); }
-.v3-bar-light i { background: var(--acento); }
+.v3-bar-light i { background: var(--acento-claro); }
 
 /* ---------- Lista de docentes ---------- */
 
@@ -388,7 +391,7 @@ body,
 }
 
 /* Foco de teclado */
-.v3-page button:focus-visible { outline: 2px solid var(--marca-700); outline-offset: 2px; }
+.v3-page button:focus-visible { outline: 2px solid var(--marca-800); outline-offset: 2px; }
 .v3-hero button:focus-visible { outline-color: var(--sobre-marca); }
 
 /* ---------- Barra inferior (solo móvil/tablet) ---------- */
@@ -409,7 +412,7 @@ body,
   font-weight: 700;
 }
 
-.v3-bnav-item.active { background: var(--verde-claro); color: var(--marca-800); }
+.v3-bnav-item.active { background: var(--seleccion); color: var(--marca-800); }
 .v3-bnav-icon { width: 22px; height: 22px; }
 
 /* ============ RESPONSIVE ============ */
