@@ -1,0 +1,477 @@
+/* =========================================================
+   PERFIL DEL ESTUDIANTE
+   ========================================================= */
+
+.pf-page {
+  --purple: #8b5cf6;
+  --purple-dark: #7c3aed;
+  --purple-soft: #ede9fe;
+
+  --bg: #f5f5f7;
+  --surface: #ffffff;
+  --line: #e5e7eb;
+  --line-soft: #f3f4f6;
+  --ink: #1a1a1a;
+  --muted: #6b7280;
+
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: "Quicksand", -apple-system, system-ui, sans-serif;
+  color: var(--ink);
+}
+
+.pf-page *,
+.pf-page *::before,
+.pf-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.pf-page svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pf-page button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* SIDEBAR */
+.pf-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 24px 16px;
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+}
+
+.pf-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px;
+}
+
+.pf-logo {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--purple);
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.pf-brand-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--purple-dark);
+}
+
+.pf-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.pf-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  transition: all 0.15s;
+}
+
+.pf-nav-item:hover {
+  background: var(--purple-soft);
+  color: var(--purple-dark);
+}
+
+.pf-nav-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.pf-logout {
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pf-logout:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* MAIN */
+.pf-main {
+  padding: 40px 48px 80px;
+  min-width: 0;
+}
+
+.pf-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.pf-header {
+  margin-bottom: 28px;
+}
+
+.pf-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.pf-back:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+}
+
+.pf-back-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.pf-header h1 {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.pf-header p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Card */
+.pf-card {
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+}
+
+.pf-card-head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.pf-avatar {
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  font-size: 26px;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 12px 24px -12px rgba(139, 92, 246, 0.6);
+}
+
+.pf-avatar-info h2 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.pf-avatar-info span {
+  display: block;
+  font-size: 13.5px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.pf-avatar-matricula {
+  margin-top: 4px;
+  font-weight: 700 !important;
+  color: var(--purple-dark) !important;
+}
+
+/* Data */
+.pf-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.pf-data-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.pf-data-row:last-child {
+  border-bottom: none;
+}
+
+.pf-data-row dt {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.2px;
+}
+
+.pf-data-row dd {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Note */
+.pf-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  margin-top: 24px;
+  border: 1px solid var(--purple-soft);
+  border-radius: 14px;
+  background: var(--purple-soft);
+}
+
+.pf-note-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--purple-dark);
+  flex-shrink: 0;
+}
+
+.pf-note strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--purple-dark);
+  margin-bottom: 4px;
+}
+
+.pf-note p {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.pf-note a {
+  color: var(--purple-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .pf-page {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-sidebar {
+    display: none;
+  }
+
+  .pf-main {
+    padding: 24px 20px 60px;
+  }
+
+  .pf-header h1 {
+    font-size: 24px;
+  }
+
+  .pf-card {
+    padding: 24px 20px;
+  }
+
+  .pf-card-head {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pf-data-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+/* ====================================
+   PERFIL DENTRO DEL LAYOUT COMPARTIDO
+==================================== */
+
+.pf-page.pf-page-embedded {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.pf-page-embedded .pf-main {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-left: 0;
+  box-sizing: border-box;
+}
+
+.pf-page-embedded .pf-wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ====================================
+   DISEÑO PARA CELULAR
+==================================== */
+
+@media screen and (max-width: 768px) {
+
+  .pf-page.pf-page-embedded {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: auto;
+  }
+
+  .pf-page-embedded .pf-main {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 22px 16px !important;
+  }
+
+  .pf-page-embedded .pf-wrap {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* ENCABEZADO */
+
+  .pf-header h1 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .pf-header p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* TARJETA PRINCIPAL */
+
+  .pf-card {
+    width: 100%;
+    min-width: 0;
+    padding: 18px 14px;
+    box-sizing: border-box;
+  }
+
+  /* INFORMACIÓN SUPERIOR */
+
+  .pf-card-head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .pf-avatar {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+  }
+
+  .pf-avatar-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .pf-avatar-info h2 {
+    font-size: 19px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  /* DATOS DEL ESTUDIANTE */
+
+  .pf-data {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .pf-data-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 13px 0;
+  }
+
+  .pf-data-row dt {
+    font-size: 13px;
+    color: #64736c;
+  }
+
+  .pf-data-row dd {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+  }
+
+  /* NOTA INFORMATIVA */
+
+  .pf-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .pf-note p,
+  .pf-note a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}

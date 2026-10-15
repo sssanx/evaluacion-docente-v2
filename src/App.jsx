@@ -7,6 +7,10 @@ import Login from "./pages/Login";
 import DashEstudiante from "./pages/estudiantes/DashEstudiante";
 import DashDocente from "./pages/docente/DashDocente";
 import DashDireccion from "./pages/direccion/DashDireccion";
+import EvaluarDocente from "./pages/estudiantes/EvaluarDocente";
+import MisEvaluaciones from "./pages/estudiantes/MisEvaluaciones";
+import Perfil from "./pages/estudiantes/Perfil";
+import LayoutEstudiante from "./pages/estudiantes/LayoutEstudiante";
 
 function App() {
   return (
@@ -20,14 +24,33 @@ function App() {
           <Route path="/" element={<Login />} />
 
           {/* RUTAS PROTEGIDAS (solo por rol) */}
-          <Route
-            path="/estudiante"
-            element={
-              <RutaProtegida rolRequerido="estudiante">
-                <DashEstudiante />
-              </RutaProtegida>
-            }
-          />
+
+<Route
+  path="/estudiante"
+  element={
+    <RutaProtegida rolRequerido="estudiante">
+      <LayoutEstudiante />
+    </RutaProtegida>
+  }
+>
+  <Route index element={<DashEstudiante />} />
+
+  <Route
+    path="mis-evaluaciones"
+    element={<MisEvaluaciones />}
+  />
+
+  <Route
+    path="perfil"
+    element={<Perfil />}
+  />
+
+  <Route
+    path="evaluar/:docenteId"
+    element={<EvaluarDocente />}
+  />
+</Route>
+
 
           <Route
             path="/docente"
