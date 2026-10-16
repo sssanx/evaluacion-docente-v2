@@ -1,0 +1,412 @@
+
+.ed-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #202124;
+}
+
+/* ENCABEZADO */
+
+.ed-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.ed-heading h1 {
+  margin: 0 0 8px;
+  font-size: 27px;
+}
+
+.ed-heading p {
+  color: #62645f;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ed-heading-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ed-primary-button,
+.ed-outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ed-primary-button {
+  background: #6f1738;
+  color: #ffffff;
+  border: 1px solid #6f1738;
+}
+
+.ed-primary-button:hover {
+  background: #58112d;
+}
+
+.ed-outline-button {
+  background: #ffffff;
+  color: #6f1738;
+  border: 1px solid #dedfd5;
+}
+
+.ed-outline-button:hover {
+  background: #f5eaef;
+}
+
+.ed-demo {
+  padding: 12px 15px;
+  border-left: 3px solid #6f1738;
+  border-radius: 6px;
+  background: #f5eaef;
+  color: #6f1738;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* TARJETAS */
+
+.ed-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.ed-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 21px;
+  background: #ffffff;
+  border: 1px solid #dedfd5;
+  border-radius: 12px;
+}
+
+.ed-stat svg {
+  color: #6f1738;
+}
+
+.ed-stat span {
+  color: #62645f;
+  font-size: 12px;
+}
+
+.ed-stat strong {
+  font-size: 28px;
+}
+
+/* PANELES */
+
+.ed-panel {
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #dedfd5;
+  border-radius: 12px;
+  min-width: 0;
+}
+
+.ed-panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 23px;
+}
+
+.ed-panel-heading h2 {
+  margin: 0 0 7px;
+  font-size: 18px;
+}
+
+.ed-panel-heading p {
+  color: #62645f;
+  font-size: 13px;
+}
+
+.ed-icon-button {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: #f7f6f2;
+  color: #202124;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* FORMULARIO */
+
+.ed-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ed-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ed-field input,
+.ed-field select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  background: #ffffff;
+  color: #202124;
+  border: 1px solid #dedfd5;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.ed-field input:focus,
+.ed-field select:focus {
+  outline: 2px solid #f5eaef;
+  border-color: #6f1738;
+}
+
+.ed-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.ed-error {
+  margin-top: 14px;
+  color: #a12036;
+  font-size: 13px;
+}
+
+.ed-success {
+  padding: 12px 15px;
+  margin-bottom: 17px;
+  border-radius: 7px;
+  background: #dce8d5;
+  color: #386641;
+  font-size: 13px;
+}
+
+/* FILTROS */
+
+.ed-filters {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.ed-search {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  color: #62645f;
+  border: 1px solid #dedfd5;
+  border-radius: 9px;
+}
+
+.ed-search input {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+}
+
+.ed-filters > select {
+  width: 230px;
+  padding: 12px;
+  border: 1px solid #dedfd5;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #202124;
+  font-size: 13px;
+}
+
+/* TABLA */
+
+.ed-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.ed-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.ed-table th {
+  padding: 15px;
+  background: #f7f6f2;
+  color: #62645f;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ed-table td {
+  padding: 16px 15px;
+  border-bottom: 1px solid #dedfd5;
+  color: #62645f;
+  vertical-align: middle;
+}
+
+.ed-table tbody tr:hover {
+  background: #fcfaf9;
+}
+
+.ed-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 205px;
+}
+
+.ed-avatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #f5eaef;
+  color: #6f1738;
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.ed-person strong,
+.ed-person small {
+  display: block;
+}
+
+.ed-person strong {
+  color: #202124;
+  margin-bottom: 5px;
+}
+
+.ed-person small {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.ed-group {
+  display: inline-block;
+  padding: 7px 10px;
+  background: #f5eaef;
+  color: #6f1738;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ed-status {
+  display: inline-block;
+  padding: 7px 11px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ed-status-active {
+  background: #dce8d5;
+  color: #386641;
+}
+
+.ed-status-inactive {
+  background: #f5eaef;
+  color: #a12036;
+}
+
+.ed-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  background: #ffffff;
+  border: 1px solid #dedfd5;
+  border-radius: 8px;
+  color: #6f1738;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ed-edit:hover {
+  background: #f5eaef;
+}
+
+.ed-empty {
+  text-align: center;
+  padding: 28px !important;
+}
+
+.ed-footer {
+  margin-top: 17px;
+  color: #62645f;
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .ed-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .ed-heading {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ed-heading h1 {
+    font-size: 24px;
+  }
+
+  .ed-stats,
+  .ed-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ed-panel {
+    padding: 17px;
+  }
+
+  .ed-filters {
+    flex-direction: column;
+  }
+
+  .ed-filters > select {
+    width: 100%;
+  }
+
+  .ed-heading-actions {
+    flex-direction: column;
+  }
+
+  .ed-form-actions {
+    flex-wrap: wrap;
+  }
+}

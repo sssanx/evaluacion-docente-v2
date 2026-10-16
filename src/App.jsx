@@ -3,17 +3,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import RutaProtegida from "./components/RutaProtegida";
 
-// Inicio de sesión
+// INICIO DE SESIÓN
 import Login from "./pages/Login";
 
-// Módulo Estudiante
+// MÓDULO ESTUDIANTE
 import LayoutEstudiante from "./pages/estudiantes/LayoutEstudiante";
 import DashEstudiante from "./pages/estudiantes/DashEstudiante";
 import EvaluarDocente from "./pages/estudiantes/EvaluarDocente";
 import MisEvaluaciones from "./pages/estudiantes/MisEvaluaciones";
 import Perfil from "./pages/estudiantes/Perfil";
 
-// Módulo Docente
+// MÓDULO DOCENTE
 import LayoutDocente from "./pages/docente/LayoutDocente";
 import DashDocente from "./pages/docente/DashDocente";
 import AsignaturasDocente from "./pages/docente/AsignaturasDocente";
@@ -23,8 +23,11 @@ import ReporteDocente from "./pages/docente/ReporteDocente";
 import PerfilDocente from "./pages/docente/PerfilDocente";
 import AyudaDocente from "./pages/docente/AyudaDocente";
 
-// Dirección Académica
+// MÓDULO DIRECCIÓN ACADÉMICA
+import LayoutDireccion from "./pages/direccion/LayoutDireccion";
 import DashDireccion from "./pages/direccion/DashDireccion";
+import DocentesDireccion from "./pages/direccion/DocentesDireccion";
+import EstudiantesDireccion from "./pages/direccion/EstudiantesDireccion";
 
 function App() {
   return (
@@ -71,57 +74,78 @@ function App() {
               </RutaProtegida>
             }
           >
-            {/* Dashboard */}
-            <Route
-              index
-              element={<DashDocente />}
-            />
+            <Route index element={<DashDocente />} />
 
-            {/* Mis asignaturas */}
             <Route
               path="asignaturas"
               element={<AsignaturasDocente />}
             />
 
-            {/* Mis resultados */}
             <Route
               path="resultados"
               element={<ResultadosDocente />}
             />
 
             <Route
-  path="comentarios"
-  element={<ComentariosDocente />}
-/>
+              path="comentarios"
+              element={<ComentariosDocente />}
+            />
 
-<Route
-  path="reporte"
-  element={<ReporteDocente />}
-/>
+            <Route
+              path="reporte"
+              element={<ReporteDocente />}
+            />
 
-  <Route
-    path="perfil"
-    element={<PerfilDocente />}
-  />
+            <Route
+              path="perfil"
+              element={<PerfilDocente />}
+            />
 
-<Route
-  path="ayuda"
-  element={<AyudaDocente />}
-/>
+            <Route
+              path="ayuda"
+              element={<AyudaDocente />}
+            />
           </Route>
 
-          {/* DIRECCIÓN ACADÉMICA */}
+          {/* MÓDULO DIRECCIÓN ACADÉMICA */}
           <Route
             path="/direccion"
             element={
               <RutaProtegida rolRequerido="admin">
-                <DashDireccion />
+                <LayoutDireccion />
               </RutaProtegida>
             }
-          />
+          >
+            <Route index element={<DashDireccion />} />
 
-          {/* RUTA NO ENCONTRADA */}
-          <Route path="*" element={<Login />} />
+            <Route
+  path="docentes"
+  element={<DocentesDireccion />}
+/>
+
+<Route
+  path="estudiantes"
+  element={<EstudiantesDireccion />}
+/>
+
+<Route
+  path="grupos"
+  element={<GruposAsignaturas />}
+/>
+            {/* PÁGINAS PENDIENTES DE IMPLEMENTAR */}
+            <Route
+              path="*"
+              element={
+                <section>
+                  <h2>Módulo en desarrollo</h2>
+                  <p>
+                    Esta sección de Dirección Académica
+                    se implementará próximamente.
+                  </p>
+                </section>
+              }
+            />
+          </Route>
 
         </Routes>
       </BrowserRouter>
