@@ -28,6 +28,13 @@ import LayoutDireccion from "./pages/direccion/LayoutDireccion";
 import DashDireccion from "./pages/direccion/DashDireccion";
 import DocentesDireccion from "./pages/direccion/DocentesDireccion";
 import EstudiantesDireccion from "./pages/direccion/EstudiantesDireccion";
+import GruposAsignaturas from "./pages/direccion/GruposAsignaturas";
+import PeriodosDireccion from "./pages/direccion/PeriodosDireccion";
+import CuestionariosDireccion from "./pages/direccion/CuestionariosDireccion";
+import ResultadosDireccion from "./pages/direccion/ResultadosDireccion";
+import ReportesDireccion from "./pages/direccion/ReportesDireccion";
+import PlanesAccion from "./pages/direccion/PlanesAccion";
+
 
 function App() {
   return (
@@ -134,17 +141,28 @@ function App() {
 />
             {/* PÁGINAS PENDIENTES DE IMPLEMENTAR */}
             <Route
-              path="*"
-              element={
-                <section>
-                  <h2>Módulo en desarrollo</h2>
-                  <p>
-                    Esta sección de Dirección Académica
-                    se implementará próximamente.
-                  </p>
-                </section>
-              }
-            />
+  path="periodos"
+  element={<PeriodosDireccion />}
+/>
+            <Route
+  path="cuestionarios"
+  element={<CuestionariosDireccion />}
+/>
+
+<Route
+  path="resultados"
+  element={<ResultadosDireccion />}
+/>
+
+<Route
+  path="reportes"
+  element={<ReportesDireccion />}
+/>
+
+<Route
+  path="planes-accion"
+  element={<PlanesAccion />}
+/>
           </Route>
 
         </Routes>
